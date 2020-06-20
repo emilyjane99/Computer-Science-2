@@ -1,0 +1,37 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+
+    Scanner input = new Scanner(System.in);
+    int year;
+    System.out.print("What year do you want to test? (make sure it's between 1500 and 2017): ");
+    year = input.nextInt();
+   
+    
+    if((year >= 1500) && (year <= 2017))
+      {
+        if (year % 4 == 0)
+        {
+          if ((year%100) != 0)
+          {
+            System.out.printf("Yes, %d is a leap year!", year);
+          }
+          else{
+            if ((year%400) == 0)
+            {
+              System.out.printf("Yes, %d is a leap year!", year);
+            }
+            else{
+              System.out.printf("Nope, %d is NOT a leap year!", year);
+            }
+          }
+        }
+        else {
+          System.out.printf("Nope, %d is NOT a leap year!", year);
+        }
+      }
+    else {
+      System.out.print("This year cannot be checked. Try again!");
+    }
+  }
+}
